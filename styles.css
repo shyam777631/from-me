@@ -1,0 +1,173 @@
+/* Basic body settings */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Moving heart background */
+.heart-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Heart shape and animation */
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 105, 180, 0.7);
+    transform: rotate(45deg);
+    animation: move-heart 5s infinite ease-in-out;
+}
+
+.heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: inherit;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    left: 10px;
+    top: 0;
+}
+
+/* Define unique positions and animation delays for each heart */
+.heart1 { left: 10%; top: 10%; animation-duration: 6s; animation-delay: 0s; }
+.heart2 { left: 20%; top: 30%; animation-duration: 7s; animation-delay: 1s; }
+.heart3 { left: 30%; top: 20%; animation-duration: 8s; animation-delay: 2s; }
+.heart4 { left: 40%; top: 40%; animation-duration: 5s; animation-delay: 0.5s; }
+.heart5 { left: 50%; top: 10%; animation-duration: 6.5s; animation-delay: 1.2s; }
+.heart6 { left: 60%; top: 35%; animation-duration: 7.5s; animation-delay: 1.8s; }
+.heart7 { left: 70%; top: 15%; animation-duration: 6s; animation-delay: 2.3s; }
+.heart8 { left: 80%; top: 45%; animation-duration: 5.5s; animation-delay: 1s; }
+.heart9 { left: 90%; top: 25%; animation-duration: 7s; animation-delay: 1.5s; }
+.heart10 { left: 85%; top: 60%; animation-duration: 8s; animation-delay: 2.5s; }
+.heart11 { left: 75%; top: 75%; animation-duration: 6s; animation-delay: 3s; }
+.heart12 { left: 65%; top: 55%; animation-duration: 6.5s; animation-delay: 2.8s; }
+.heart13 { left: 55%; top: 80%; animation-duration: 7.5s; animation-delay: 1.9s; }
+.heart14 { left: 45%; top: 70%; animation-duration: 5.5s; animation-delay: 3.5s; }
+.heart15 { left: 35%; top: 60%; animation-duration: 6.8s; animation-delay: 2.2s; }
+.heart16 { left: 25%; top: 50%; animation-duration: 6.3s; animation-delay: 1.6s; }
+.heart17 { left: 15%; top: 65%; animation-duration: 7.2s; animation-delay: 0.8s; }
+.heart18 { left: 10%; top: 80%; animation-duration: 6.5s; animation-delay: 2.1s; }
+.heart19 { left: 20%; top: 90%; animation-duration: 7.1s; animation-delay: 3.7s; }
+.heart20 { left: 30%; top: 85%; animation-duration: 8s; animation-delay: 3.1s; }
+
+@keyframes move-heart {
+    0% {
+        transform: translate(0, 0) scale(0.5);
+        opacity: 1;
+    }
+    25% {
+        transform: translate(-50vw, -30vh) scale(1.2);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translate(50vw, 30vh) scale(1);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translate(0, 0) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Card settings */
+.card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    width: 400px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.5s ease;
+    position: relative;
+    max-height: 80%;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.image-container {
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: scale(1);
+}
+
+.image-container.hidden {
+    display: none;
+}
+
+/* Hidden elements */
+.hidden {
+    display: none;
+}
+
+/* Hidden message */
+.message, .footer {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.message.hidden, .footer.hidden {
+    display: none;
+}
+
+.footer {
+    background-color: #f8bbd0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 10px;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+strong {
+    color: #e91e63;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease;
+}
+
+/* Responsive design */
+@media (max-width: 500px) {
+    .card {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .image-container img {
+        width: 100%;
+    }
+}
